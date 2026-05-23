@@ -1,12 +1,95 @@
-Set-Content -Path C:\Users\gvenk\my-website\index.html -Value @"
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>My K8s Website</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevOps Dispatch</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,sans-serif;color:#1a1a1a;background:#fff}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid #eee}
+    .logo{font-size:18px;font-weight:600;display:flex;align-items:center;gap:8px}
+    .logo-dot{width:10px;height:10px;border-radius:50%;background:#534AB7}
+    .nav-links{display:flex;gap:1.5rem;font-size:14px;color:#555}
+    .hero{padding:4rem 2rem 3rem;border-bottom:1px solid #eee;background:#fafafa}
+    .hero-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;background:#EEEDFE;color:#3C3489;padding:4px 14px;border-radius:999px;margin-bottom:1rem}
+    .hero h1{font-size:36px;font-weight:700;line-height:1.3;margin-bottom:1rem;max-width:600px}
+    .hero p{font-size:16px;color:#555;line-height:1.7;max-width:520px;margin-bottom:1.5rem}
+    .btn-primary{background:#534AB7;color:#fff;border:none;padding:12px 24px;border-radius:8px;font-size:14px;cursor:pointer;margin-right:10px}
+    .btn-secondary{background:#fff;color:#333;border:1px solid #ddd;padding:12px 24px;border-radius:8px;font-size:14px;cursor:pointer}
+    .tags-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:1.5rem}
+    .tag{font-size:12px;padding:4px 12px;border-radius:999px;border:1px solid #ddd;color:#555}
+    .tag.k{background:#E1F5EE;color:#085041;border-color:#9FE1CB}
+    .tag.d{background:#E6F1FB;color:#0C447C;border-color:#85B7EB}
+    .tag.j{background:#FAECE7;color:#712B13;border-color:#F0997B}
+    .tag.ci{background:#FAEEDA;color:#633806;border-color:#EF9F27}
+    .section{padding:2.5rem 2rem}
+    .section-title{font-size:20px;font-weight:600;margin-bottom:1.5rem}
+    .featured{background:#f5f5f5;border-radius:12px;padding:1.5rem;margin-bottom:1rem;display:flex;gap:1.5rem}
+    .feat-icon{width:52px;height:52px;border-radius:10px;background:#EEEDFE;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:24px;color:#534AB7}
+    .posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .post-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:1.25rem}
+    .post-tag{font-size:11px;font-weight:600;padding:3px 10px;border-radius:999px;margin-bottom:0.75rem;display:inline-block}
+    .pt-k{background:#E1F5EE;color:#085041}
+    .pt-d{background:#E6F1FB;color:#0C447C}
+    .pt-j{background:#FAECE7;color:#712B13}
+    .pt-ci{background:#FAEEDA;color:#633806}
+    .post-title{font-size:15px;font-weight:600;line-height:1.4;margin-bottom:0.5rem}
+    .post-meta{font-size:12px;color:#888;margin-top:0.75rem}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:1.5rem}
+    .stat{background:#f5f5f5;border-radius:8px;padding:1rem;text-align:center}
+    .stat-num{font-size:24px;font-weight:700;color:#534AB7}
+    .stat-label{font-size:12px;color:#888;margin-top:4px}
+    .footer{padding:1.5rem 2rem;border-top:1px solid #eee;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#888}
+  </style>
 </head>
 <body>
-  <h1>Hello from Kubernetes! 🚀</h1>
+  <nav class="nav">
+    <div class="logo"><div class="logo-dot"></div>DevOps Dispatch</div>
+    <div class="nav-links"><a href="#">Blog</a><a href="#">Tutorials</a><a href="#">Tools</a><a href="#">About</a></div>
+  </nav>
+  <div class="hero">
+    <div class="hero-tag">Ship faster, break less</div>
+    <h1>The DevOps blog for engineers who love automation</h1>
+    <p>Deep dives into Kubernetes, CI/CD pipelines, Docker, and cloud infrastructure — written by practitioners, for practitioners.</p>
+    <button class="btn-primary">Read latest posts</button>
+    <button class="btn-secondary">Subscribe</button>
+    <div class="tags-row">
+      <span class="tag k">Kubernetes</span>
+      <span class="tag d">Docker</span>
+      <span class="tag j">Jenkins</span>
+      <span class="tag ci">CI/CD</span>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-title">Featured post</div>
+    <div class="featured">
+      <div class="feat-icon">&#9783;</div>
+      <div>
+        <span class="post-tag pt-k">Kubernetes</span>
+        <div class="post-title" style="font-size:18px">Deploying your first app to Kubernetes on Docker Desktop</div>
+        <p style="font-size:14px;color:#555;margin-top:8px;line-height:1.6">From writing a Dockerfile to NodePort services and ConfigMaps — everything you need to go from zero to running pods.</p>
+        <div class="post-meta">Venkata Naresh &middot; May 23, 2026 &middot; 8 min read</div>
+      </div>
+    </div>
+  </div>
+  <div class="section" style="padding-top:0">
+    <div class="section-title">Latest posts</div>
+    <div class="posts">
+      <div class="post-card"><span class="post-tag pt-j">Jenkins</span><div class="post-title">Setting up a Jenkins CI/CD pipeline with GitHub webhooks</div><div class="post-meta">May 23, 2026 &middot; 6 min read</div></div>
+      <div class="post-card"><span class="post-tag pt-d">Docker</span><div class="post-title">Why imagePullPolicy matters in local Kubernetes clusters</div><div class="post-meta">May 22, 2026 &middot; 4 min read</div></div>
+      <div class="post-card"><span class="post-tag pt-ci">CI/CD</span><div class="post-title">Poll SCM vs webhooks — choosing the right trigger</div><div class="post-meta">May 21, 2026 &middot; 5 min read</div></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">12</div><div class="stat-label">Articles</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Topics</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Projects</div></div>
+    </div>
+  </div>
+  <footer class="footer">
+    <span>DevOps Dispatch &copy; 2026 &mdash; venkyvenkat110</span>
+    <span>GitHub &middot; Docker Hub &middot; RSS</span>
+  </footer>
 </body>
 </html>
-naresh
