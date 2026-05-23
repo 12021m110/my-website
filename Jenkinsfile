@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         IMAGE_NAME = "venkyvenkat110/my-website"
-        IMAGE_TAG  = "latest"
     }
 
     stages {
@@ -17,7 +16,11 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
+                    if (env.BRANCH_NAME == 'main') {
+                        docker.build("${IMAGE_NAME}:latest")
+                    } else {
+                        docker.build("${IMAGE_NAME}:${env.BRANCH_NAME}")
+                    }
                 }
             }
         }
@@ -26,29 +29,52 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-creds') {
-                        docker.image("${IMAGE_NAME}:${IMAGE_TAG}").push()
+                        if (env.BRANCH_NAME == 'main') {
+                            docker.image("${IMAGE_NAME}:latest").push()
+                        } else {
+                            docker.image("${IMAGE_NAME}:${env.BRANCH_NAME}").push()
+                        }
                     }
                 }
             }
         }
 
-        stage('Deploy to Kubernetes') {
+        stage('Deploy to Dev') {
+            when { branch 'dev' }
             steps {
                 withKubeConfig([credentialsId: 'kubeconfig', serverUrl: 'https://172.18.0.3:6443']) {
-                    sh 'kubectl apply -f my-app.yaml --validate=false'
-                    sh 'kubectl rollout restart deployment/my-app'
-                    sh 'kubectl rollout status deployment/my-app'
+                    sh 'kubectl apply -f deploy-dev.yaml --validate=false'
+                    sh 'kubectl rollout restart deployment/my-app -n dev'
+                    sh 'kubectl rollout status deployment/my-app -n dev'
+                }
+            }
+        }
+
+        stage('Deploy to Staging') {
+            when { branch 'staging' }
+            steps {
+                withKubeConfig([credentialsId: 'kubeconfig', serverUrl: 'https://172.18.0.3:6443']) {
+                    sh 'kubectl apply -f deploy-staging.yaml --validate=false'
+                    sh 'kubectl rollout restart deployment/my-app -n staging'
+                    sh 'kubectl rollout status deployment/my-app -n staging'
+                }
+            }
+        }
+
+        stage('Deploy to Production') {
+            when { branch 'main' }
+            steps {
+                withKubeConfig([credentialsId: 'kubeconfig', serverUrl: 'https://172.18.0.3:6443']) {
+                    sh 'kubectl apply -f deploy-prod.yaml --validate=false'
+                    sh 'kubectl rollout restart deployment/my-app -n prod'
+                    sh 'kubectl rollout status deployment/my-app -n prod'
                 }
             }
         }
     }
 
     post {
-        success {
-            echo 'Deployment successful!'
-        }
-        failure {
-            echo 'Pipeline failed - check logs above.'
-        }
+        success { echo 'Deployment successful!' }
+        failure { echo 'Pipeline failed - check logs above.' }
     }
 }
