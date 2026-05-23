@@ -32,16 +32,15 @@ pipeline {
             }
         }
 
-        stage('Deploy to Kubernetes') {
-            steps {
-                withKubeConfig([credentialsId: 'kubeconfig']) {
-                    sh 'kubectl apply -f my-app.yaml'
-                    sh 'kubectl rollout restart deployment/my-app'
-                    sh 'kubectl rollout status deployment/my-app'
-                }
-            }
+stage('Deploy to Kubernetes') {
+    steps {
+        withKubeConfig([credentialsId: 'kubeconfig', serverUrl: 'https://172.18.0.3:6443']) {
+            sh 'kubectl apply -f my-app.yaml --validate=false'
+            sh 'kubectl rollout restart deployment/my-app'
+            sh 'kubectl rollout status deployment/my-app'
         }
     }
+}
 
     post {
         success {
