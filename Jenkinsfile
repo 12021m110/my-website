@@ -64,7 +64,7 @@ pipeline {
         stage('Deploy to Production') {
             when { branch 'main' }
             steps {
-                withKubeConfig([credentialsId: 'kubeconfig', serverUrl: 'https://172.18.0.3:6443']) {
+                withKubeConfig([credentialsId: 'kubeconfig', serverUrl: 'https://172.18.0.4:6443']) {
                     sh 'kubectl apply -f deploy-prod.yaml --validate=false'
                     sh 'kubectl rollout restart deployment/my-app -n prod'
                     sh 'kubectl rollout status deployment/my-app -n prod'
