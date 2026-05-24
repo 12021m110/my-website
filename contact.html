@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Venkata Naresh</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,sans-serif;color:#1a1a1a;background:#fff}
+    a{text-decoration:none;color:inherit}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:100}
+    .logo{font-size:16px;font-weight:600;color:#534AB7;display:flex;align-items:center;gap:8px}
+    .logo-dot{width:8px;height:8px;border-radius:50%;background:#534AB7}
+    .nav-links{display:flex;gap:2rem;font-size:14px}
+    .nav-links a{color:#555}
+    .nav-links a:hover,.nav-links a.active{color:#534AB7;font-weight:500}
+    .nav-btn{background:#534AB7;color:#fff;border:none;padding:8px 20px;border-radius:999px;font-size:13px;cursor:pointer}
+    .hero{padding:4rem 2rem 3rem;background:#fafafa;border-bottom:1px solid #eee;text-align:center}
+    .hero-tag{display:inline-block;font-size:12px;color:#534AB7;font-weight:600;text-transform:uppercase;letter-spacing:1px;background:#EEEDFE;padding:5px 14px;border-radius:999px;margin-bottom:1rem}
+    .hero h1{font-size:32px;font-weight:700;margin-bottom:12px}
+    .hero p{font-size:15px;color:#555;line-height:1.8;max-width:480px;margin:0 auto}
+    .section{padding:4rem 2rem}
+    .section-inner{max-width:800px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+    @media(max-width:640px){.section-inner{grid-template-columns:1fr}}
+    .form-title{font-size:20px;font-weight:700;margin-bottom:1.5rem}
+    .form-group{margin-bottom:1.25rem}
+    .form-label{font-size:13px;font-weight:600;color:#555;margin-bottom:6px;display:block}
+    .form-input{width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:8px;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s;background:#fff;color:#1a1a1a}
+    .form-input:focus{border-color:#534AB7;box-shadow:0 0 0 3px #EEEDFE}
+    textarea.form-input{resize:vertical;min-height:120px}
+    .form-btn{width:100%;background:#534AB7;color:#fff;border:none;padding:12px;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer}
+    .form-btn:hover{background:#3C3489}
+    .success-msg{display:none;background:#E1F5EE;color:#085041;border:1px solid #9FE1CB;border-radius:8px;padding:12px 16px;font-size:14px;margin-top:12px}
+    .info-title{font-size:20px;font-weight:700;margin-bottom:1.5rem}
+    .info-cards{display:flex;flex-direction:column;gap:12px;margin-bottom:2rem}
+    .info-card{display:flex;align-items:center;gap:14px;padding:1rem 1.25rem;border:1px solid #eee;border-radius:12px;background:#fff}
+    .info-card:hover{border-color:#AFA9EC}
+    .info-icon{width:40px;height:40px;border-radius:10px;background:#EEEDFE;display:flex;align-items:center;justify-content:center;color:#534AB7;font-size:18px;flex-shrink:0}
+    .info-label{font-size:12px;color:#888;margin-bottom:2px}
+    .info-value{font-size:14px;font-weight:500;color:#534AB7}
+    .social-title{font-size:14px;font-weight:600;margin-bottom:12px;color:#555}
+    .social-links{display:flex;gap:10px;flex-wrap:wrap}
+    .social-btn{display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:10px;border:1px solid #eee;font-size:13px;background:#fff;color:#333}
+    .social-btn:hover{background:#EEEDFE;border-color:#AFA9EC;color:#3C3489}
+    .avail{background:#EEEDFE;border-radius:12px;padding:1.25rem;margin-top:1.5rem;border:1px solid #AFA9EC}
+    .avail-dot{width:8px;height:8px;border-radius:50%;background:#1D9E75;display:inline-block;margin-right:6px}
+    .avail-title{font-size:14px;font-weight:600;color:#3C3489}
+    .avail-sub{font-size:13px;color:#534AB7;margin-top:6px}
+    footer{padding:2rem;border-top:1px solid #eee;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#888}
+    .footer-links a{color:#534AB7}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="logo"><div class="logo-dot"></div>Venkata Naresh</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+  <a href="contact.html"><button class="nav-btn">Hire me</button></a>
+</nav>
+<div class="hero">
+  <div class="hero-tag">Get in touch</div>
+  <h1>Let's work together</h1>
+  <p>Have a project in mind or looking for a DevOps engineer? I'd love to hear from you.</p>
+</div>
+<div class="section">
+  <div class="section-inner">
+    <div>
+      <div class="form-title">Send a message</div>
+      <div class="form-group"><label class="form-label">Your name</label><input type="text" class="form-input" placeholder="John Smith" id="fname"/></div>
+      <div class="form-group"><label class="form-label">Email address</label><input type="email" class="form-input" placeholder="john@example.com" id="femail"/></div>
+      <div class="form-group"><label class="form-label">Subject</label><input type="text" class="form-input" placeholder="Project enquiry" id="fsubject"/></div>
+      <div class="form-group"><label class="form-label">Message</label><textarea class="form-input" placeholder="Tell me about your project..." id="fmessage"></textarea></div>
+      <button class="form-btn" onclick="submitForm()">Send message &rarr;</button>
+      <div class="success-msg" id="success-msg">&#10003; Message sent! I will get back to you within 24 hours.</div>
+    </div>
+    <div>
+      <div class="info-title">Contact details</div>
+      <div class="info-cards">
+        <a href="mailto:venkyvenkat110@gmail.com" class="info-card"><div class="info-icon">&#9993;</div><div><div class="info-label">Email</div><div class="info-value">venkyvenkat110@gmail.com</div></div></a>
+        <a href="https://github.com/12021m110" class="info-card"><div class="info-icon">&#9670;</div><div><div class="info-label">GitHub</div><div class="info-value">github.com/12021m110</div></div></a>
+        <a href="https://hub.docker.com/u/venkyvenkat110" class="info-card"><div class="info-icon">&#9881;</div><div><div class="info-label">Docker Hub</div><div class="info-value">venkyvenkat110</div></div></a>
+      </div>
+      <div class="social-title">Find me on</div>
+      <div class="social-links">
+        <a href="https://github.com/12021m110" class="social-btn">&#9670; GitHub</a>
+        <a href="https://hub.docker.com/u/venkyvenkat110" class="social-btn">&#9881; Docker Hub</a>
+        <a href="mailto:venkyvenkat110@gmail.com" class="social-btn">&#9993; Email</a>
+      </div>
+      <div class="avail">
+        <div><span class="avail-dot"></span><span class="avail-title">Available for work</span></div>
+        <div class="avail-sub">Currently open to new DevOps opportunities, freelance projects and collaborations.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <span>Venkata Naresh &copy; 2026</span>
+  <div class="footer-links" style="display:flex;gap:1.5rem">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="blog.html">Blog</a>
+  </div>
+</footer>
+<script>
+function submitForm() {
+  const name = document.getElementById("fname").value;
+  const email = document.getElementById("femail").value;
+  const message = document.getElementById("fmessage").value;
+  if (!name || !email || !message) { alert("Please fill in all required fields."); return; }
+  document.getElementById("success-msg").style.display = "block";
+  document.getElementById("fname").value = "";
+  document.getElementById("femail").value = "";
+  document.getElementById("fsubject").value = "";
+  document.getElementById("fmessage").value = "";
+}
+</script>
+</body>
+</html>
