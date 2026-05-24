@@ -3,93 +3,132 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DevOps Dispatch</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <title>Venkata Naresh | DevOps Engineer</title>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:system-ui,sans-serif;color:#1a1a1a;background:#fff}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid #eee}
-    .logo{font-size:18px;font-weight:600;display:flex;align-items:center;gap:8px}
-    .logo-dot{width:10px;height:10px;border-radius:50%;background:#534AB7}
-    .nav-links{display:flex;gap:1.5rem;font-size:14px;color:#555}
-    .hero{padding:4rem 2rem 3rem;border-bottom:1px solid #eee;background:#fafafa}
-    .hero-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;background:#EEEDFE;color:#3C3489;padding:4px 14px;border-radius:999px;margin-bottom:1rem}
-    .hero h1{font-size:36px;font-weight:700;line-height:1.3;margin-bottom:1rem;max-width:600px}
-    .hero p{font-size:16px;color:#555;line-height:1.7;max-width:520px;margin-bottom:1.5rem}
-    .btn-primary{background:#534AB7;color:#fff;border:none;padding:12px 24px;border-radius:8px;font-size:14px;cursor:pointer;margin-right:10px}
-    .btn-secondary{background:#fff;color:#333;border:1px solid #ddd;padding:12px 24px;border-radius:8px;font-size:14px;cursor:pointer}
-    .tags-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:1.5rem}
-    .tag{font-size:12px;padding:4px 12px;border-radius:999px;border:1px solid #ddd;color:#555}
-    .tag.k{background:#E1F5EE;color:#085041;border-color:#9FE1CB}
-    .tag.d{background:#E6F1FB;color:#0C447C;border-color:#85B7EB}
-    .tag.j{background:#FAECE7;color:#712B13;border-color:#F0997B}
-    .tag.ci{background:#FAEEDA;color:#633806;border-color:#EF9F27}
-    .section{padding:2.5rem 2rem}
-    .section-title{font-size:20px;font-weight:600;margin-bottom:1.5rem}
-    .featured{background:#f5f5f5;border-radius:12px;padding:1.5rem;margin-bottom:1rem;display:flex;gap:1.5rem}
-    .feat-icon{width:52px;height:52px;border-radius:10px;background:#EEEDFE;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:24px;color:#534AB7}
-    .posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-    .post-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:1.25rem}
-    .post-tag{font-size:11px;font-weight:600;padding:3px 10px;border-radius:999px;margin-bottom:0.75rem;display:inline-block}
-    .pt-k{background:#E1F5EE;color:#085041}
-    .pt-d{background:#E6F1FB;color:#0C447C}
-    .pt-j{background:#FAECE7;color:#712B13}
-    .pt-ci{background:#FAEEDA;color:#633806}
-    .post-title{font-size:15px;font-weight:600;line-height:1.4;margin-bottom:0.5rem}
-    .post-meta{font-size:12px;color:#888;margin-top:0.75rem}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:1.5rem}
-    .stat{background:#f5f5f5;border-radius:8px;padding:1rem;text-align:center}
-    .stat-num{font-size:24px;font-weight:700;color:#534AB7}
-    .stat-label{font-size:12px;color:#888;margin-top:4px}
-    .footer{padding:1.5rem 2rem;border-top:1px solid #eee;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#888}
+    a{text-decoration:none;color:inherit}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:100}
+    .logo{font-size:16px;font-weight:600;color:#534AB7;display:flex;align-items:center;gap:8px}
+    .logo-dot{width:8px;height:8px;border-radius:50%;background:#534AB7}
+    .nav-links{display:flex;gap:2rem;font-size:14px}
+    .nav-links a{color:#555;transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:#534AB7;font-weight:500}
+    .nav-btn{background:#534AB7;color:#fff;border:none;padding:8px 20px;border-radius:999px;font-size:13px;cursor:pointer}
+    .hero{padding:5rem 2rem 4rem;background:#fafafa;border-bottom:1px solid #eee}
+    .hero-inner{display:flex;gap:3rem;align-items:center;max-width:800px;margin:0 auto}
+    .avatar{width:100px;height:100px;border-radius:50%;background:#EEEDFE;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:600;color:#534AB7;flex-shrink:0;border:3px solid #AFA9EC}
+    .hero-role{font-size:14px;color:#534AB7;font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+    .hero h1{font-size:36px;font-weight:700;margin-bottom:12px;line-height:1.3}
+    .hero p{font-size:16px;color:#555;line-height:1.8;margin-bottom:1.5rem;max-width:500px}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1.5rem}
+    .btn-p{background:#534AB7;color:#fff;border:none;padding:12px 24px;border-radius:999px;font-size:14px;cursor:pointer}
+    .btn-s{background:transparent;color:#534AB7;border:2px solid #AFA9EC;padding:10px 24px;border-radius:999px;font-size:14px;cursor:pointer}
+    .skills-row{display:flex;gap:8px;flex-wrap:wrap}
+    .skill{font-size:12px;padding:5px 14px;border-radius:999px;background:#EEEDFE;color:#3C3489;border:1px solid #AFA9EC;font-weight:500}
+    .section{padding:4rem 2rem;border-bottom:1px solid #eee}
+    .section-inner{max-width:800px;margin:0 auto}
+    .section-tag{font-size:12px;color:#534AB7;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+    .section-title{font-size:28px;font-weight:700;margin-bottom:1rem}
+    .section-sub{font-size:15px;color:#555;line-height:1.7;margin-bottom:2rem;max-width:500px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .project-card{background:#fff;border:1px solid #eee;border-radius:14px;padding:1.5rem;transition:border-color .2s,transform .2s}
+    .project-card:hover{border-color:#AFA9EC;transform:translateY(-2px)}
+    .project-icon{width:44px;height:44px;border-radius:10px;background:#EEEDFE;display:flex;align-items:center;justify-content:center;color:#534AB7;font-size:22px;margin-bottom:12px}
+    .project-title{font-size:15px;font-weight:600;margin-bottom:6px}
+    .project-desc{font-size:13px;color:#555;line-height:1.6;margin-bottom:12px}
+    .project-tags{display:flex;gap:6px;flex-wrap:wrap}
+    .ptag{font-size:11px;padding:3px 10px;border-radius:999px;background:#EEEDFE;color:#3C3489;font-weight:500}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:3rem}
+    .stat{background:#fafafa;border-radius:12px;padding:1.5rem;text-align:center;border:1px solid #eee}
+    .stat-num{font-size:32px;font-weight:700;color:#534AB7}
+    .stat-label{font-size:13px;color:#888;margin-top:4px}
+    .tools{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.5rem}
+    .tool{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:1px solid #eee;font-size:13px;background:#fff}
+    .tool-dot{width:8px;height:8px;border-radius:50%;background:#534AB7}
+    .cta{background:#EEEDFE;border-radius:16px;padding:3rem 2rem;text-align:center;margin-top:2rem}
+    .cta h2{font-size:24px;font-weight:700;margin-bottom:8px;color:#3C3489}
+    .cta p{font-size:15px;color:#534AB7;margin-bottom:1.5rem}
+    footer{padding:2rem;border-top:1px solid #eee;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#888}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{color:#534AB7}
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="logo"><div class="logo-dot"></div>DevOps by Venkata Naresh</div>
-    <div class="nav-links"><a href="index.html">Blog</a><a href="#">Tutorials</a><a href="#">Tools</a><a href="about.html">About</a></div>
-  </nav>
-  <div class="hero">
-    <div class="hero-tag">Ship faster, break less</div>
-    <h1>The DevOps blog for engineers who love automation</h1>
-    <p>Deep dives into Kubernetes, CI/CD pipelines, Docker, and cloud infrastructure — written by practitioners, for practitioners.</p>
-    <button class="btn-primary">Read latest posts</button>
-    <button class="btn-secondary">Subscribe</button>
-    <div class="tags-row">
-      <span class="tag k">Kubernetes</span>
-      <span class="tag d">Docker</span>
-      <span class="tag j">Jenkins</span>
-      <span class="tag ci">CI/CD</span>
-    </div>
+<nav>
+  <div class="logo"><div class="logo-dot"></div>Venkata Naresh</div>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
   </div>
-  <div class="section">
-    <div class="section-title">Featured post</div>
-    <div class="featured">
-      <div class="feat-icon">&#9783;</div>
-      <div>
-        <span class="post-tag pt-k">Kubernetes</span>
-        <div class="post-title" style="font-size:18px">Deploying your first app to Kubernetes on Docker Desktop</div>
-        <p style="font-size:14px;color:#555;margin-top:8px;line-height:1.6">From writing a Dockerfile to NodePort services and ConfigMaps — everything you need to go from zero to running pods.</p>
-        <div class="post-meta">Venkata Naresh &middot; May 23, 2026 &middot; 8 min read</div>
+  <a href="contact.html"><button class="nav-btn">Hire me</button></a>
+</nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="avatar">VN</div>
+    <div>
+      <div class="hero-role">DevOps Engineer</div>
+      <h1>Hi, I'm Venkata Naresh</h1>
+      <p>I build reliable CI/CD pipelines, automate deployments and manage cloud infrastructure. Passionate about Kubernetes, Docker and making software delivery fast and painless.</p>
+      <div class="hero-btns">
+        <a href="about.html"><button class="btn-p">View projects</button></a>
+        <a href="contact.html"><button class="btn-s">Get in touch</button></a>
+      </div>
+      <div class="skills-row">
+        <span class="skill">Kubernetes</span><span class="skill">Docker</span><span class="skill">Jenkins</span><span class="skill">CI/CD</span><span class="skill">GitHub</span><span class="skill">Linux</span>
       </div>
     </div>
   </div>
-  <div class="section" style="padding-top:0">
-    <div class="section-title">Latest posts</div>
-    <div class="posts">
-      <div class="post-card"><span class="post-tag pt-j">Jenkins</span><div class="post-title">Setting up a Jenkins CI/CD pipeline with GitHub webhooks</div><div class="post-meta">May 23, 2026 &middot; 6 min read</div></div>
-      <div class="post-card"><span class="post-tag pt-d">Docker</span><div class="post-title">Why imagePullPolicy matters in local Kubernetes clusters</div><div class="post-meta">May 22, 2026 &middot; 4 min read</div></div>
-      <div class="post-card"><span class="post-tag pt-ci">CI/CD</span><div class="post-title">Poll SCM vs webhooks — choosing the right trigger</div><div class="post-meta">May 21, 2026 &middot; 5 min read</div></div>
+</div>
+<div class="section">
+  <div class="section-inner">
+    <div class="section-tag">Portfolio</div>
+    <div class="section-title">Featured projects</div>
+    <div class="section-sub">Real-world DevOps projects built from scratch.</div>
+    <div class="projects">
+      <div class="project-card"><div class="project-icon">&#9783;</div><div class="project-title">K8s portfolio deployment</div><div class="project-desc">Full CI/CD pipeline deploying this portfolio to Kubernetes with dev, staging and prod environments.</div><div class="project-tags"><span class="ptag">Kubernetes</span><span class="ptag">Jenkins</span></div></div>
+      <div class="project-card"><div class="project-icon">&#9881;</div><div class="project-title">Docker image pipeline</div><div class="project-desc">Automated Docker builds pushed to Docker Hub on every git commit via Jenkins multibranch pipeline.</div><div class="project-tags"><span class="ptag">Docker</span><span class="ptag">Docker Hub</span></div></div>
+      <div class="project-card"><div class="project-icon">&#10140;</div><div class="project-title">GitHub webhook automation</div><div class="project-desc">Configured GitHub webhooks with Cloudflare tunnel for instant auto-deploy on every push.</div><div class="project-tags"><span class="ptag">CI/CD</span><span class="ptag">Cloudflare</span></div></div>
     </div>
     <div class="stats">
-      <div class="stat"><div class="stat-num">12</div><div class="stat-label">Articles</div></div>
-      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Topics</div></div>
-      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Projects</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Environments</div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">K8s pods</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Automated</div></div>
     </div>
   </div>
-  <footer class="footer">
-    <span>DevOps by Venkata Naresh &copy; 2026 &mdash; venkyvenkat110</span>
-    <span>GitHub &middot; Docker Hub &middot; RSS</span>
-  </footer>
+</div>
+<div class="section">
+  <div class="section-inner">
+    <div class="section-tag">Toolbox</div>
+    <div class="section-title">Tools I work with</div>
+    <div class="tools">
+      <div class="tool"><div class="tool-dot"></div>Kubernetes</div>
+      <div class="tool"><div class="tool-dot"></div>Docker</div>
+      <div class="tool"><div class="tool-dot"></div>Jenkins</div>
+      <div class="tool"><div class="tool-dot"></div>GitHub</div>
+      <div class="tool"><div class="tool-dot"></div>Cloudflare</div>
+      <div class="tool"><div class="tool-dot"></div>Linux</div>
+      <div class="tool"><div class="tool-dot"></div>Bash</div>
+      <div class="tool"><div class="tool-dot"></div>PowerShell</div>
+      <div class="tool"><div class="tool-dot"></div>nginx</div>
+      <div class="tool"><div class="tool-dot"></div>YAML</div>
+    </div>
+    <div class="cta">
+      <h2>Let's work together</h2>
+      <p>Looking for a DevOps engineer? I'm available for new opportunities.</p>
+      <a href="contact.html"><button class="btn-p">Get in touch</button></a>
+    </div>
+  </div>
+</div>
+<footer>
+  <span>Venkata Naresh &copy; 2026</span>
+  <div class="footer-links">
+    <a href="https://github.com/12021m110">GitHub</a>
+    <a href="https://hub.docker.com/u/venkyvenkat110">Docker Hub</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
 </body>
 </html>
