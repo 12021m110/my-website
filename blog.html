@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | Venkata Naresh</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,sans-serif;color:#1a1a1a;background:#fff}
+    a{text-decoration:none;color:inherit}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:100}
+    .logo{font-size:16px;font-weight:600;color:#534AB7;display:flex;align-items:center;gap:8px}
+    .logo-dot{width:8px;height:8px;border-radius:50%;background:#534AB7}
+    .nav-links{display:flex;gap:2rem;font-size:14px}
+    .nav-links a{color:#555}
+    .nav-links a:hover,.nav-links a.active{color:#534AB7;font-weight:500}
+    .nav-btn{background:#534AB7;color:#fff;border:none;padding:8px 20px;border-radius:999px;font-size:13px;cursor:pointer}
+    .hero{padding:4rem 2rem 3rem;background:#fafafa;border-bottom:1px solid #eee;text-align:center}
+    .hero-tag{display:inline-block;font-size:12px;color:#534AB7;font-weight:600;text-transform:uppercase;letter-spacing:1px;background:#EEEDFE;padding:5px 14px;border-radius:999px;margin-bottom:1rem}
+    .hero h1{font-size:32px;font-weight:700;margin-bottom:12px}
+    .hero p{font-size:15px;color:#555;line-height:1.8;max-width:500px;margin:0 auto}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;padding:1.5rem 2rem;border-bottom:1px solid #eee;max-width:900px;margin:0 auto}
+    .filter{font-size:13px;padding:6px 16px;border-radius:999px;border:1px solid #eee;background:#fff;cursor:pointer;color:#555}
+    .filter.active,.filter:hover{background:#EEEDFE;color:#3C3489;border-color:#AFA9EC}
+    .section{padding:3rem 2rem}
+    .section-inner{max-width:900px;margin:0 auto}
+    .featured{background:#EEEDFE;border-radius:16px;padding:2rem;margin-bottom:2.5rem;border:1px solid #AFA9EC}
+    .feat-badge{font-size:11px;font-weight:600;background:#534AB7;color:#fff;padding:4px 12px;border-radius:999px;margin-bottom:10px;display:inline-block}
+    .feat-tag{font-size:11px;font-weight:600;background:#AFA9EC;color:#3C3489;padding:3px 10px;border-radius:999px;margin-bottom:10px;display:inline-block;margin-left:6px}
+    .feat-title{font-size:20px;font-weight:700;margin-bottom:8px;color:#26215C;line-height:1.4}
+    .feat-desc{font-size:14px;color:#534AB7;line-height:1.7;margin-bottom:12px}
+    .feat-meta{font-size:12px;color:#534AB7}
+    .posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .post-card{background:#fff;border:1px solid #eee;border-radius:14px;padding:1.5rem;transition:border-color .2s,transform .2s;cursor:pointer}
+    .post-card:hover{border-color:#AFA9EC;transform:translateY(-2px)}
+    .post-tag{font-size:11px;font-weight:600;padding:3px 10px;border-radius:999px;margin-bottom:10px;display:inline-block}
+    .pt-k{background:#E1F5EE;color:#085041}
+    .pt-d{background:#E6F1FB;color:#0C447C}
+    .pt-j{background:#FAECE7;color:#712B13}
+    .pt-ci{background:#FAEEDA;color:#633806}
+    .pt-p{background:#EEEDFE;color:#3C3489}
+    .post-title{font-size:15px;font-weight:600;line-height:1.4;margin-bottom:8px}
+    .post-desc{font-size:13px;color:#555;line-height:1.6;margin-bottom:12px}
+    .post-meta{font-size:12px;color:#888;display:flex;align-items:center;gap:8px}
+    .meta-dot{width:3px;height:3px;border-radius:50%;background:#ccc}
+    .read-more{font-size:12px;color:#534AB7;font-weight:500;margin-top:10px;display:block}
+    footer{padding:2rem;border-top:1px solid #eee;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#888}
+    .footer-links a{color:#534AB7}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="logo"><div class="logo-dot"></div>Venkata Naresh</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="contact.html"><button class="nav-btn">Hire me</button></a>
+</nav>
+<div class="hero">
+  <div class="hero-tag">DevOps blog</div>
+  <h1>Articles &amp; tutorials</h1>
+  <p>Deep dives into Kubernetes, CI/CD pipelines, Docker and cloud infrastructure — written from real hands-on experience.</p>
+</div>
+<div class="filters">
+  <span class="filter active">All</span>
+  <span class="filter">Kubernetes</span>
+  <span class="filter">Docker</span>
+  <span class="filter">Jenkins</span>
+  <span class="filter">CI/CD</span>
+</div>
+<div class="section">
+  <div class="section-inner">
+    <div class="featured">
+      <span class="feat-badge">Featured</span><span class="feat-tag">Kubernetes</span>
+      <div class="feat-title">Deploying your first app to Kubernetes on Docker Desktop — a complete walkthrough</div>
+      <div class="feat-desc">From writing a Dockerfile to setting up NodePort services, ConfigMaps and a full Jenkins CI/CD pipeline with GitHub webhooks.</div>
+      <div class="feat-meta">Venkata Naresh &middot; May 23, 2026 &middot; 12 min read</div>
+    </div>
+    <div class="posts">
+      <div class="post-card"><span class="post-tag pt-j">Jenkins</span><div class="post-title">Setting up a Jenkins CI/CD pipeline with GitHub webhooks</div><div class="post-desc">How to install Jenkins in Docker, connect it to GitHub and trigger auto-deploys on every push using Cloudflare tunnel.</div><div class="post-meta"><span>May 23, 2026</span><span class="meta-dot"></span><span>8 min read</span></div><span class="read-more">Read more &rarr;</span></div>
+      <div class="post-card"><span class="post-tag pt-d">Docker</span><div class="post-title">Why imagePullPolicy matters in local Kubernetes clusters</div><div class="post-desc">The difference between Never, IfNotPresent and Always — and why getting it wrong causes ErrImageNeverPull.</div><div class="post-meta"><span>May 22, 2026</span><span class="meta-dot"></span><span>5 min read</span></div><span class="read-more">Read more &rarr;</span></div>
+      <div class="post-card"><span class="post-tag pt-ci">CI/CD</span><div class="post-title">Poll SCM vs webhooks — choosing the right trigger</div><div class="post-desc">When to use scheduled polling vs instant webhook triggers in Jenkins, and how to set up each one properly.</div><div class="post-meta"><span>May 21, 2026</span><span class="meta-dot"></span><span>4 min read</span></div><span class="read-more">Read more &rarr;</span></div>
+      <div class="post-card"><span class="post-tag pt-k">Kubernetes</span><div class="post-title">Dev, staging and production — multiple environments in K8s</div><div class="post-desc">How to use Kubernetes namespaces to create isolated environments with separate deployments and services.</div><div class="post-meta"><span>May 24, 2026</span><span class="meta-dot"></span><span>7 min read</span></div><span class="read-more">Read more &rarr;</span></div>
+      <div class="post-card"><span class="post-tag pt-d">Docker</span><div class="post-title">Pushing images to Docker Hub from a Jenkins pipeline</div><div class="post-desc">Step by step guide to building Docker images in Jenkins and pushing to Docker Hub with credentials.</div><div class="post-meta"><span>May 20, 2026</span><span class="meta-dot"></span><span>5 min read</span></div><span class="read-more">Read more &rarr;</span></div>
+      <div class="post-card"><span class="post-tag pt-p">DevOps</span><div class="post-title">Exposing local Kubernetes services with Cloudflare tunnel</div><div class="post-desc">How to use cloudflared to give your local Kubernetes service a public HTTPS URL without buying a domain.</div><div class="post-meta"><span>May 24, 2026</span><span class="meta-dot"></span><span>4 min read</span></div><span class="read-more">Read more &rarr;</span></div>
+    </div>
+  </div>
+</div>
+<footer>
+  <span>Venkata Naresh &copy; 2026</span>
+  <div class="footer-links" style="display:flex;gap:1.5rem">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+  </div>
+</footer>
+</body>
+</html>
